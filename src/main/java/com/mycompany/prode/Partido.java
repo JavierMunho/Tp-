@@ -1,34 +1,78 @@
 package com.mycompany.prode;
 
-public class Partido  {
+public class Partido {
 
-  private Equipo equipo1;
-  private Equipo equipo2;
-  private int golesEquipo1 , golesEquipo2;
+    private Equipo equipo1;
+    private Equipo equipo2;
+    private int golesEq1;
+    private int golesEq2;
 
-    public Partido() {
-    }
-
-    private Partido(Equipo equipo1, Equipo equipo2, int golesEquipo1, int golesEquipo2) {
+    public Partido(Equipo equipo1, Equipo equipo2) {
+        super();
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
-        this.golesEquipo1 = golesEquipo1;
-        this.golesEquipo2 = golesEquipo2;
-        ResultadoEnum resultado;
     }
-  private String resultado(){
-    if (golesEquipo1 > golesEquipo2){  
-        equipo1= ResultadoEnum.ganador(); 
-        equipo2= ResultadoEnum.perdedor();
-        } else if (golesEquipo1 < golesEquipo2) {
-        equipo1= ResultadoEnum.perdedor();
-         equipo1= ResultadoEnum.ganador();
-        } else if (golesEquipo1 == golesEquipo2){
-      equipo1 = ResultadoEnum.empate();
-        equipo2 =ResultadoEnum.empate();
+
+    public Partido(Equipo equipo1, Equipo equipo2, int golesEq1, int golesEq2) {
+        super();
+        this.equipo1 = equipo1;
+        this.equipo2 = equipo2;
+        this.golesEq1 = golesEq1;
+        this.golesEq2 = golesEq2;
+    }
+
+    public Equipo getEquipo1() {
+        return equipo1;
+    }
+
+    public void setEquipo1(Equipo equipo1) {
+        this.equipo1 = equipo1;
+    }
+
+    public Equipo getEquipo2() {
+        return equipo2;
+    }
+
+    public void setEquipo2(Equipo equipo2) {
+        this.equipo2 = equipo2;
+    }
+
+    public int getGolesEq1() {
+        return golesEq1;
+    }
+
+    public void setGolesEq1(int golesEq1) {
+        this.golesEq1 = golesEq1;
+    }
+
+    public int getGolesEq2() {
+        return golesEq2;
+    }
+
+    public void setGolesEq2(int golesEq2) {
+        this.golesEq2 = golesEq2;
+    }
+
+    public EnumResultado resultado(Equipo equipo) {
+        if (golesEq1 == golesEq2) {
+            return EnumResultado.EMPATE;
         }
-            return " ";
+        //asumimos que  el equipo elegido es equipo1
+        if (equipo.getNombre().equals(equipo1.getNombre())) {
+            if (golesEq1 > golesEq2) {
+                return EnumResultado.GANADOR;
+            } else {
+                return EnumResultado.PERDEDOR;
+            }
+        } else {
+            // como equipo no es equipo1, entonces es equipo2
+            if (golesEq2 > golesEq1) {
+                return EnumResultado.GANADOR;
+            } else {
+                return EnumResultado.PERDEDOR;
+            }
         }
-      
-  
+
+    }
+
 }

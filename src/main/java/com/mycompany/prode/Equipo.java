@@ -2,15 +2,15 @@
 package com.mycompany.prode;
 
 
-class Equipo {
-  public String nombre;
- public String Descripcion;
+public class Equipo {
+  private String nombre;
+ private String Descripcion;
     public Equipo() {
     }
 
-    public Equipo(String nombre, String Descripcion) {
+    public Equipo(String nombre) {
         this.nombre = nombre;
-        this.Descripcion = Descripcion;
+      
     }
 
     public String getNombre() {
