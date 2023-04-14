@@ -16,6 +16,7 @@ public class Prode {
 
 		Path pathResultados = Paths.get(args[0]);
 		List<String> lineasResultados = null;
+// Intentara conectarse al archivo resultados
 		try {
 			lineasResultados = Files.readAllLines(pathResultados);
 		} catch (IOException e) {
