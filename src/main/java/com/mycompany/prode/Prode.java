@@ -10,12 +10,13 @@ import java.util.List;
 
 public class Prode {
 
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 		// Leer resultados
 		Collection<Partido> partidos = new ArrayList<Partido>();
 
 		Path pathResultados = Paths.get(args[0]);
 		List<String> lineasResultados = null;
+// Intentara conectarse al archivo resultados
 		try {
 			lineasResultados = Files.readAllLines(pathResultados);
 		} catch (IOException e) {
@@ -41,7 +42,7 @@ public class Prode {
 		}
 		// Leer pronostico
 		int puntos = 0; // total puntos pesona
-		
+
 		Path pathPronostico = Paths.get(args[1]);
 		List<String> lineasPronostico = null;
 		try {
@@ -63,12 +64,12 @@ public class Prode {
 
 				for (Partido partidoCol : partidos) {
 					if (partidoCol.getEquipo1().getNombre(
-							).equals(equipo1.getNombre())
+					).equals(equipo1.getNombre())
 							&& partidoCol.getEquipo2().getNombre(
-									).equals(equipo2.getNombre())) {
-						
+					).equals(equipo2.getNombre())) {
+
 						partido = partidoCol;
-						
+
 					}
 				}
 				Equipo equipo = null;
@@ -94,10 +95,5 @@ public class Prode {
 		// mostrar los puntos
 		System.out.println("Los puntos obtenidos por el apostador fueron:");
 		System.out.println(puntos);
-
 	}
-
-
-            
-   
 }
