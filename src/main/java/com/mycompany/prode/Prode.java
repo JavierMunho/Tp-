@@ -100,15 +100,11 @@ public class Prode {
 				String nombreParticipante = campos[5];
 				if (puntosParticipante.containsKey(
 						nombreParticipante)) {
-					puntosParticipante.put(nombreParticipante,
-							puntosParticipante.get(
-									nombreParticipante)
+					puntosParticipante.put(nombreParticipante, puntosParticipante.get(nombreParticipante)
 									+
-									pronostico.puntos()
-					);
+									pronostico.puntos());
 				} else {
-					puntosParticipante.put(nombreParticipante,
-							pronostico.puntos());
+					puntosParticipante.put(nombreParticipante, pronostico.puntos());
 				}
 			}
 		}
