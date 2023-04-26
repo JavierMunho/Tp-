@@ -1,13 +1,23 @@
+<<<<<<< HEAD
 Equipo 1,Gana  1,Empate,Gana 2,Equipo 2,Participante
+=======
+Equipo 1,Gana  1,Empate ,Gana 2 ,Equipo 2,Participante
+>>>>>>> origin/master
 Argentina,X,,,Arabia Saudita,Facu
 Polonia,,X,,Mexico,Facu
 Argentina,,,X,Arabia Saudita,Ulises
 Polonia,,,X,Mexico,Ulises
 Argentina,X,,,Mexico,Facu
 Polonia,X,,,Arabia Saudita,Facu
+<<<<<<< HEAD
 Argentina,,X,,Mexico,Ulises
 Polonia,,,X,Arabia Saudita,Ulises
 Argentina,X,,,Polonia,Facu
+=======
+Argentina,,x,,Mexico,Ulises
+Polonia,,,X,Arabia Saudita,Ulises
+Argentina,x,,,Polonia,Facu
+>>>>>>> origin/master
 Mexico,X,,,Arabia Saudita,Facu
 Argentina,X,,,Polonia,Ulises
 Mexico,,X,,Arabia Saudita,Ulises
