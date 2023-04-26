@@ -14,7 +14,7 @@ public class Prode {
 
 	public static void main(String[] args) {
 		// Leer resultados
-		Collection<Partido> partidos = new ArrayList<Partido>();
+		Collection<Partido> partidos = new ArrayList<>();
 
 		Path pathResultados = Paths.get(args[0]);
 		List<String> lineasResultados = null;

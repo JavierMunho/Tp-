@@ -1,4 +1,4 @@
-Equipo 1,Gana 1,Empate,Gana 2,Equipo 2,Participante
+Equipo1,Gana1,Empate,Gana2,Equipo2,Participante
 Argentina,X,,,Arabia Saudita,Facu
 Polonia,,X,,Mexico,Facu
 Argentina,,,X,Arabia Saudita,Ulises
@@ -8,6 +8,6 @@ Polonia,X,,,Arabia Saudita,Facu
 Argentina,,X,,Mexico,Ulises
 Polonia,,,X,Arabia Saudita,Ulises
 Argentina,X,,,Polonia,Facu
-Mexico,,x,,Arabia Saudita,Facu
-Argentina,x,,,Polonia,Ulises
+Mexico,,X,,Arabia Saudita,Facu
+Argentina,X,,,Polonia,Ulises
 Mexico,X,,,Arabia Saudita,Ulises
