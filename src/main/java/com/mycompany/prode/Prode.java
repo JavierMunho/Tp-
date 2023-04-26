@@ -1,5 +1,6 @@
 package com.mycompany.prode;
 
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -112,8 +113,10 @@ public class Prode {
 
 		// mostrar los puntos
 		for (String participante : puntosParticipante.keySet()) {
-			System.out.println("Los puntos obtenidos por el Apostador " + participante + " fueron:");
-			System.out.println(puntosParticipante.get(participante));
+			System.out.println("****************************************");
+			System.out.print("Felicitaciones  " + participante + "  lograste : ");
+			System.out.println(puntosParticipante.get(participante)+" puntos ");
+			System.out.println("***************************************");
 
 		}
 	}
