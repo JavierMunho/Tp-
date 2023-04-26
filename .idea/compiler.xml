@@ -9,8 +9,5 @@
         <module name="prode" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="prode" target="14" />
-    </bytecodeTargetLevel>
   </component>
 </project>
