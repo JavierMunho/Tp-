@@ -5,16 +5,15 @@ public class Partido {
     private Equipo equipo2;
     private int golesEq1;
     private int golesEq2;
-    private int ronda;
+    private Ronda ronda;
 
+    // constructores
     public Partido(Equipo equipo1, Equipo equipo2) {
-        super();
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
     }
 
     public Partido(Equipo equipo1, Equipo equipo2, int golesEq1, int golesEq2) {
-        super();
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
         this.golesEq1 = golesEq1;
@@ -23,11 +22,14 @@ public class Partido {
 
 
 
-    public int getRonda() {
+    //getters y setters
+
+
+    public Ronda getRonda() {
         return ronda;
     }
 
-    public void setRonda(int ronda) {
+    public void setRonda(Ronda ronda) {
         this.ronda = ronda;
     }
 
@@ -55,6 +57,9 @@ public class Partido {
     public void setGolesEq2(int golesEq2) {
         this.golesEq2 = golesEq2;
     }
+/* metodo que establece los posibles resultados  para cada equipo
+de acuerdo a los goles de cada equipo*/
+
 
     public EnumResultado resultado(Equipo equipo) {
         if(golesEq1 == golesEq2) {
