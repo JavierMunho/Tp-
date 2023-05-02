@@ -97,37 +97,32 @@ public class Prode {
 				Pronostico pronostico = new Pronostico(partido, equipo, resultado);
 				// sumar los puntos correspondientes
 
-
 				String nombreParticipante = campos[5];
-				if (puntosParticipante.containsKey(
-						nombreParticipante)) {
+				if (puntosParticipante.containsKey(nombreParticipante)) {
 					puntosParticipante.put(nombreParticipante,
 							puntosParticipante.get(nombreParticipante)
-									+
-									pronostico.puntos());
+									+ pronostico.puntos());
 				} else {
 					puntosParticipante.put(nombreParticipante, pronostico.puntos());
 				}
 			}
 		}
-         //Solo hay que agregar. El código en la main que
-		// asignen y sume los puntos por ronda completa
-		//asignar puntos por ronda completa
-/*
-		for (String nombreApostador : apostadores.keySet()) {
-			for (Ronda ronda : resultado.rondas()) {
-				Apostador apostador = apostadores.get(nombreApostador);
-				List<Pronostico> apuestas = apostador.getPronosticos();
-				boolean cumplioRonda = ronda.acertoTodos(apuestas);
-				if(cumplioRonda) {
-					apostador.incPuntosPorBonus(2);
-				}
-			}
-		}
+			//Solo hay que agregar. El código en la main que
+			// asignen y sume los puntos por ronda completa
+			//asignar puntos por ronda completa
+	//	        int numero=0;//           Ronda ronda =new Ronda(numero);
+	//			for(String participante : puntosParticipante){
+
+	//			}
+
+
+
 
 		//mostrar puntos por ronda completa
 
-	*/	// mostrar los puntos
+
+
+         	// mostrar los puntos
 		for (String participante : puntosParticipante.keySet()) {
 			System.out.println("****************************************");
 			System.out.print("Felicitaciones  " + participante + "  lograste : ");
