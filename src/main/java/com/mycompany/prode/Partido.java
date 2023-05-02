@@ -13,11 +13,14 @@ public class Partido {
         this.equipo2 = equipo2;
     }
 
+
     public Partido(Equipo equipo1, Equipo equipo2, int golesEq1, int golesEq2) {
         this.equipo1 = equipo1;
         this.equipo2 = equipo2;
         this.golesEq1 = golesEq1;
         this.golesEq2 = golesEq2;
+
+
     }
 
 
@@ -81,5 +84,6 @@ de acuerdo a los goles de cada equipo*/
         }
 
     }
-
+    public void setRonda(int i) {
+    }
 }
