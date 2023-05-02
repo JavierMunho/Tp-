@@ -52,6 +52,11 @@ public class Apostador {
         this.puntos = puntos;
     }
 
+    //agregado agregar pronostico
+    public void addPronostico(Pronostico pronostico){
+        this.pronosticos.add(pronostico);
+    }
+
     // metodo que recorre los pronosticos y recolecta los puntos acertados y nos devuelve los puntos del apostador
     public int puntosPorPronostico() {
         for (Pronostico pronostico : pronosticos) {

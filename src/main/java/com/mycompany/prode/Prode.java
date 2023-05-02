@@ -19,7 +19,7 @@ public class Prode {
 
 		Path pathResultados = Paths.get(args[0]);
 		List<String> lineasResultados = null;
-// Intentara conectarse al archivo resultados
+        // Intentara conectarse al archivo resultados
 		try {
 			lineasResultados = Files.readAllLines(pathResultados);
 		} catch (IOException e) {
@@ -110,8 +110,24 @@ public class Prode {
 				}
 			}
 		}
+         //Solo hay que agregar. El código en la main que
+		// asignen y sume los puntos por ronda completa
+		//asignar puntos por ronda completa
+/*
+		for (String nombreApostador : apostadores.keySet()) {
+			for (Ronda ronda : resultado.rondas()) {
+				Apostador apostador = apostadores.get(nombreApostador);
+				List<Pronostico> apuestas = apostador.getPronosticos();
+				boolean cumplioRonda = ronda.acertoTodos(apuestas);
+				if(cumplioRonda) {
+					apostador.incPuntosPorBonus(2);
+				}
+			}
+		}
 
-		// mostrar los puntos
+		//mostrar puntos por ronda completa
+
+	*/	// mostrar los puntos
 		for (String participante : puntosParticipante.keySet()) {
 			System.out.println("****************************************");
 			System.out.print("Felicitaciones  " + participante + "  lograste : ");
