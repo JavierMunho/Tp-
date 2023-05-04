@@ -27,7 +27,12 @@ public class Prode {
 			System.out.println(e.getMessage());
 			System.exit(1);
 		}
-		boolean primera = true;
+
+
+
+
+		
+	    boolean primera = true;
 		for (String lineaResultado : lineasResultados) {
 			if (primera) {
 				primera = false;
@@ -41,87 +46,99 @@ public class Prode {
 				partido.setGolesEq2(Integer.parseInt(campos[2]));
 				partido.setRonda(Integer.parseInt(campos[4]));
 				partidos.add(partido);
+
 			}
 
 		}
-		// Leer pronostico
+			// Leer pronostico
 
-		Map<String, Integer> puntosParticipante = new HashMap<>();
+			Map<String, Integer> puntosParticipante = new HashMap<>();
 
 
-		//int puntos = 0; // total puntos persona
+			int puntos = 0; // total puntos persona
 
-		Path pathPronostico = Paths.get(args[1]);
-		List<String> lineasPronostico = null;
-		try {
-			lineasPronostico = Files.readAllLines(pathPronostico);
-		} catch (IOException e) {
-			System.out.println("No se pudo leer la linea de pronosticos...");
-			System.out.println(e.getMessage());
-			System.exit(1);
-		}
-		primera = true;
-		for (String lineaPronostico : lineasPronostico) {
-			if (primera) {
-				primera = false;
-			} else {
-				String[] campos = lineaPronostico.split(",");
-				Equipo equipo1 = new Equipo(campos[0]);
-				Equipo equipo2 = new Equipo(campos[4]);
-				Partido partido = null;
+			Path pathPronostico = Paths.get(args[1]);
+			List<String> lineasPronostico = null;
+			try {
+				lineasPronostico = Files.readAllLines(pathPronostico);
+			} catch (IOException e) {
+				System.out.println("No se pudo leer la linea de pronosticos...");
+				System.out.println(e.getMessage());
+				System.exit(1);
+			}
+			primera = true;
+			for (String lineaPronostico : lineasPronostico) {
+				if (primera) {
+					primera = false;
+				} else {
+					String[] campos = lineaPronostico.split(",");
+					Equipo equipo1 = new Equipo(campos[0]);
+					Equipo equipo2 = new Equipo(campos[4]);
+					Partido partido = null;
 
-				for (Partido partidoCol : partidos) {
-					if (partidoCol.getEquipo1().getNombre(
-					).equals(equipo1.getNombre())
-							&& partidoCol.getEquipo2().getNombre(
-					).equals(equipo2.getNombre())) {
+					for (Partido partidoCol : partidos) {
+						if (partidoCol.getEquipo1().getNombre(
+						).equals(equipo1.getNombre())
+								&& partidoCol.getEquipo2().getNombre(
+						).equals(equipo2.getNombre())) {
 
-						partido = partidoCol;
+							partido = partidoCol;
+
+						}
+					}
+					Equipo equipo = null;
+					EnumResultado resultado = null;
+					if ("X".equals(campos[1])) {
+						equipo = equipo1;
+						resultado = EnumResultado.GANADOR;
+					}
+					if ("X".equals(campos[2])) {
+						equipo = equipo1;
+						resultado = EnumResultado.EMPATE;
+					}
+					if ("X".equals(campos[3])) {
+						equipo = equipo1;
+						resultado = EnumResultado.PERDEDOR;
+					}
+					Pronostico pronostico = new Pronostico(partido, equipo, resultado);
+
+
+					// sumar los puntos correspondientes
+
+					String nombreParticipante = campos[5];
+					if (puntosParticipante.containsKey(
+							nombreParticipante)) {
+						puntosParticipante.put(nombreParticipante,
+								puntosParticipante.get(nombreParticipante)
+										+
+										pronostico.puntos());
+					} else {
+						puntosParticipante.put(nombreParticipante, pronostico.puntos());
 
 					}
-				}
-				Equipo equipo = null;
-				EnumResultado resultado = null;
-				if ("X".equals(campos[1])) {
-					equipo = equipo1;
-					resultado = EnumResultado.GANADOR;
-				}
-				if ("X".equals(campos[2])) {
-					equipo = equipo1;
-					resultado = EnumResultado.EMPATE;
-				}
-				if ("X".equals(campos[3])) {
-					equipo = equipo1;
-					resultado = EnumResultado.PERDEDOR;
-				}
-				Pronostico pronostico = new Pronostico(partido, equipo, resultado);
-				// sumar los puntos correspondientes
 
 
-				String nombreParticipante = campos[5];
-				if (puntosParticipante.containsKey(
-						nombreParticipante)) {
-					puntosParticipante.put(nombreParticipante,
-							puntosParticipante.get(nombreParticipante)
-									+
-									pronostico.puntos());
-				} else {
-					puntosParticipante.put(nombreParticipante, pronostico.puntos());
+
 				}
 			}
+
+
+			// mostrar los puntos
+			for (String participante : puntosParticipante.keySet()) {
+				System.out.println("****************************************");
+				System.out.print("Felicitaciones  " + participante + "  lograste : ");
+				System.out.println(puntosParticipante.get(participante) + " puntos ");
+				System.out.println("***************************************");
+
+			}
+
 		}
-
-		// mostrar los puntos
-		for (String participante : puntosParticipante.keySet()) {
-			System.out.println("****************************************");
-			System.out.print("Felicitaciones  " + participante + "  lograste : ");
-			System.out.println(puntosParticipante.get(participante)+" puntos ");
-			System.out.println("***************************************");
-
-		}
-
 	}
-}
+
+
+
+
+
 
 
             
